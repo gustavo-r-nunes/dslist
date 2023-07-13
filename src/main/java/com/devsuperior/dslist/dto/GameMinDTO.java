@@ -1,6 +1,7 @@
 package com.devsuperior.dslist.dto;
 
 import com.devsuperior.dslist.Entities.Game;
+import com.devsuperior.dslist.Projections.GameMinProjection;
 import jakarta.persistence.Column;
 
 public class GameMinDTO {
@@ -24,6 +25,14 @@ public class GameMinDTO {
         this.year = year;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
+    }
+
+    public GameMinDTO(GameMinProjection game) {
+        this.id = game.getId();
+        this.title = game.getTitle();
+        this.year = game.getYear();
+        this.imgUrl = game.getImgUrl();
+        this.shortDescription = game.getShortDescription();
     }
 
     public GameMinDTO(Game game) {
